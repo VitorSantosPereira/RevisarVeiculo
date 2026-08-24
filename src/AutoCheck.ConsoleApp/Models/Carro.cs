@@ -1,4 +1,4 @@
-namespace RevisarVeiculo
+namespace RevisarVeiculo.Models
 {
     public class Carro : Veiculo
     {

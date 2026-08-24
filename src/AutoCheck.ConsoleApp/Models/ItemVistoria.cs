@@ -1,4 +1,4 @@
-namespace RevisarVeiculo
+namespace RevisarVeiculo.Models
 {
     public class ItemVistoria
     {
@@ -12,7 +12,6 @@ namespace RevisarVeiculo
             get => _status;
             private set
             {
-                // Encapsulamento: garante que apenas os 3 status de negócio sejam aceitos.
                 if (!StatusValidos.Contains(value))
                 {
                     throw new ArgumentException(
@@ -22,5 +21,28 @@ namespace RevisarVeiculo
             }
         }
 
+        public int Pontos
+        {
+            get
+            {
+                switch (Status)
+                {
+                    case "Bom":
+                        return 10;
+                    case "Regular":
+                        return 5;
+                    case "Ruim":
+                        return 0;
+                    default:
+                        return 0;
+                }
+            }
+        }
+
+        public ItemVistoria(string nome, string status)
+        {
+            this.Nome = nome;
+            this.Status = status;
+        }
     }
 }
