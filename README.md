@@ -20,6 +20,8 @@ cd src/AutoCheck.ConsoleApp
 dotnet run dev 
 ```
 
+Após rodar você poderá fazer 3 escolhas, 1 - Realizar Nova Vistoria, colocando os dados do veiculo selecionado. 2 - Exibir Relatório, exibe os relatórios já registrados. 0 - Sair, fechando o programa.
+
 
 # Integrante:
 
