@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace RevisarVeiculo.Models
 {
     public class Moto : Veiculo
