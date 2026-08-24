@@ -12,5 +12,21 @@ namespace RevisarVeiculo.Models
             this.QuantidadeEixos = quantidadeEixos;
             this.CapacidadeCargaToneladas = capacidadeCargaToneladas;
         }
+
+        public override string Tipo => "Caminhão";
+
+        public override string ObterAtributoEspecificoTexto()
+        {
+            return $"{QuantidadeEixos} Eixos | Cap. Carga: {CapacidadeCargaToneladas:N1} Toneladas";
+        }
+
+        public override List<string> ObterChecklistObrigatorio()
+        {
+            var checklist = base.ObterChecklistObrigatorio();
+            checklist.Add("Tacógrafo");
+            checklist.Add("Sistema de Freios a Ar");
+            checklist.Add("Trava e Lona da Caçamba");
+            return checklist;
+        }
     }
 }

@@ -8,5 +8,21 @@ namespace RevisarVeiculo.Models
         {
             this.Cilindradas = cilindradas;
         }
+
+        public override string Tipo => "Moto";
+
+        public override string ObterAtributoEspecificoTexto()
+        {
+            return $"{Cilindradas}cc";
+        }
+
+        public override List<string> ObterChecklistObrigatorio()
+        {
+            var checklist = base.ObterChecklistObrigatorio();
+            checklist.Add("Kit Transmissão/Corrente");
+            checklist.Add("Manetes de Freio/Embreagem");
+            checklist.Add("Pezinho Lateral");
+            return checklist;
+        }
     }
 }
